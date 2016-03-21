@@ -2,7 +2,7 @@ clear all;
 clc;
 
 
-load colorvar.mat
+load colorvar.mat % all variables needed from pre-processing stored here
 
 
 
@@ -14,6 +14,5 @@ do
   options=optimset('GradObj', 'On');
   [v fval info output]=fminunc(@(theta)costfun(X_norm, theta, Theta1, Theta2, y), theta, options);
   theta=v;
-  save('th.mat', 'theta');
+  save('th.mat', 'theta'); 
 until (J < .00005);
-
