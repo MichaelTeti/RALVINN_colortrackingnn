@@ -36,8 +36,7 @@ for i=1:length(foldersNames), %loop through all folders
 	    im=im(150:278, 1:330, :);
 	    im=im(1:downsample:end, 1:downsample:end, :);  %downsample to speed things up
 	    im2=im+.03*rand(size(im)); %add noise to create more training images
-	    im3=im; %add brightness to increase range a little more
-        im3(1:20:end, 1:20:end, :)=0.0010;
+	    im3=im+.12; %add brightness to increase range a little more
 	    all_colors=[all_colors im(:) im2(:) im3(:)];
     end
 end
